@@ -36,7 +36,7 @@ var objQ={
 
         this.question[i] = document.createElement('li');
         this.question[i].classList.add('question');
-        this.question[i].innerHTML = QBase[i].q;
+        this.question[i].innerHTML = main[i].q;
         this.questionBlock.appendChild(this.question[i]);
 
     },
@@ -55,7 +55,7 @@ var objQ={
         this.answerBlock[i].appendChild(this.div[i]);
         this.checkb = document.createElement('input');
         this.checkb.setAttribute('type','checkbox');
-        this.answer[i].innerHTML=QBase[i].a[j];
+        this.answer[i].innerHTML = main[i].a[j];
         this.div[i].appendChild(this.checkb);
         this.div[i].appendChild(this.answer[i]);
     },
@@ -74,14 +74,14 @@ var objQ={
         this.createForm();
         this.createHeader();
         this.createQuestionBlock();
-        for ( var i = 0; i < QBase.length; i++){
+        for ( var i = 0; i < main.length; i++){
             this.createQuestion(i);
         };
-        for (var i = 0;i < QBase.length;i++){
+        for (var i = 0;i < main.length;i++){
             this.createAnswerBlock(i);
         };
-        for (var i = 0; i < QBase.length; i++){
-            for (var j= 0; j < QBase[i].a.length; j++){
+        for (var i = 0; i < main.length; i++){
+            for (var j= 0; j < main[i].a.length; j++){
                 this.createAnswer(i, j);
             }
         };
